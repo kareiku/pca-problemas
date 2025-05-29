@@ -1,0 +1,26 @@
+@startuml
+
+skin rose
+
+actor User
+actor "nave_3" as Nave
+actor "satelite_2" as Satelite
+actor Torre
+
+User -> Nave: iniciar
+User <-- Nave: "[nave_3] está en\nel espacio profundo"
+User <-- Nave: "[nave_3] pide permiso\na satelite_2"
+Nave -> Satelite: solicitar
+User <-- Satelite: "[satelite_2] Pido permiso\na Torre para nave_3"
+Satelite -> Torre: solicitar
+User <-- Torre: "[Torre] Permiso\nconcedido a nave_3"
+Satelite <- Torre: conceder
+User <-- Satelite: "[satelite_2] Torre concede\npermiso a nave_3"
+Nave <- Satelite: conceder
+User <-- Nave: "[nave_3] inicia maniobra"
+Nave -> Satelite: fin_de_maniobra
+User <-- Satelite: "[satelite_2] La nave\nnave_3 ha terminado"
+Satelite -> Torre: fin_de_maniobra
+User <-- Torre: "[Torre] Maniobra finalizada\nde la nave_3. Pista libre."
+
+@enduml

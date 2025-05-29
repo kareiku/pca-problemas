@@ -1,0 +1,18 @@
+{
+    "name": "sbt",
+    "version": "1.10.11",
+    "bspVersion": "2.1.0-M1",
+    "languages": [
+        "scala"
+    ],
+    "argv": [
+        "~/.jdks/corretto-17.0.15/bin/java",
+        "-Xms100m",
+        "-Xmx100m",
+        "-classpath",
+        "~/.local/share/JetBrains/IdeaIC2025.1/Scala/launcher/sbt-launch.jar",
+        "xsbt.boot.Boot",
+        "-bsp",
+        "--sbt-launch-jar=~/.local/share/JetBrains/IdeaIC2025.1/Scala/launcher/sbt-launch.jar"
+    ]
+}

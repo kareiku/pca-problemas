@@ -1,0 +1,19 @@
+@startuml sequence
+
+skin rose
+
+actor ": Cliente" as client
+participant "C₁" as c1
+participant "C₂" as c2
+participant "R" as r
+participant "F" as f
+
+client -> c1 : Inicia pedido
+c1 -> r : Delega pedido
+r -> r : Realiza trámites
+r -> f : Envía trámites
+f -> f : Fabrica productos
+f -> c2 : Envía productos
+c2 -> client : Entrega productos
+
+@enduml
